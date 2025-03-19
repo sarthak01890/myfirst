@@ -8,7 +8,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key}); // ✅ Fixed incorrect character
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue, // ✅ Correct usage of MaterialColor
       ),
       darkTheme: ThemeData(
-        brightness: Brightness.light, // ✅ Define dark theme
+        brightness: Brightness.dark, // ✅ Correct dark theme brightness
       ),
       initialRoute: "/home",
       routes: {
-        "/":(context)=> LoginPage(),
-        "/home":(context)=> Homepage(),
-        "/login": (context)=> LoginPage()
+        "/": (context) => const LoginPage(), // ✅ Marked as const for optimization
+        "/home": (context) => const Homepage(), // ✅ Marked as const for optimization
+        "/login": (context) => const LoginPage(), // ✅ Marked as const for optimization
       },
     );
   }
