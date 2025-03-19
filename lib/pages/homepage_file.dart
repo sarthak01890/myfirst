@@ -8,10 +8,11 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home"), // ✅ Added a valid title
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.red,
       ),
       body: Center(
         child: Text(

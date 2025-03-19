@@ -1,7 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:myfirst/pages/homepage_file.dart';
+import 'package:myfirst/pages/loginpage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,14 +13,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text(
-            "Welcome Sarthak",
-             style:TextStyle(fontSize: 24),//optional style
-          ),
-        ),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(
+        primarySwatch: Colors.blue, // ✅ Correct usage of MaterialColor
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.light, // ✅ Define dark theme
+      ),
+      initialRoute: "/home",
+      routes: {
+        "/":(context)=> LoginPage(),
+        "/home":(context)=> Homepage(),
+        "/login": (context)=> LoginPage()
+      },
     );
   }
 }
