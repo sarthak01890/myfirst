@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class HomePage extends StatelessWidget { // ✅ Changed Homepage to HomePage
+  const HomePage({super.key});
 
   final int days = 30;
   final String name = "Sarthak";
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"), // ✅ Added a valid title
+        title: const Text("Home"),
         backgroundColor: Colors.red,
       ),
       body: Center(
